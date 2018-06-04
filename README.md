@@ -1,13 +1,10 @@
 # dotfiles
-Well, a mess to be organized, someday. 
+Well, a mess to be organized, someday.
 
 ![jungle](https://i.giphy.com/6ENaZfuHLJaE0.gif)
 
-# Credits 
-Dotfiles arranger: https://github.com/nobe4/yada
+# Usage & installation
+https://gist.github.com/fabienheureux/18c989fc7218e926c505048aaa306fc6
 
-Example vimrc: http://vim.wikia.com/wiki/Example_vimrc
-
-Prezto: https://github.com/sorin-ionescu/prezto
-
-zsh: https://github.com/robbyrussell/oh-my-zsh
+# Credits
+Dotfiles: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
