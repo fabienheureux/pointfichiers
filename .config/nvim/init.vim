@@ -39,6 +39,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Style
 syntax on
+set t_Co=256
 colorscheme nova
 
 " ------------------------------------------------------------

@@ -41,7 +41,7 @@ alias ctg "ctags -R -f ./.tags ."
 ### Wing ###
 ############
 alias wdb "psql -h 51.38.44.82 -d postgres_sb -p 5432 --username=dms"
-alias wdbl "psql -h 127.0.0.1 -d postgres_sb -p 5432 --username=dms"
+alias wdbl "psql -h 127.0.0.1 -p 5432 --username=dms"
 
 #############
 ### Shell ###

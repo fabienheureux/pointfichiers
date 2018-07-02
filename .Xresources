@@ -1,61 +1,102 @@
-*.font: xft:Overpass Mono:size=10
+!-----------------------------------------------------------------------
+!                         Xft settings
+!-----------------------------------------------------------------------
+Xft.dpi:                96
+Xft.autohint:           false
+Xft.antialias:          true
+Xft.rgba:               rgb
+Xft.hinting:            true
+Xft:hintstyle:          hintslight
+Xft.lcdfilter: 					lcddefault
 
-Xft.dpi:                        96
-Xft.antialias:                  1
-Xft.autohint:                   1
-Xft.hinting:                    1
-Xft.hintstyle:                  hintslight
-Xft.lcdfilter:                  lcdlight
-Xft.rgba:                       rgb
+!-----------------------------------------------------------------------
+!                        URxvt settings
+!-----------------------------------------------------------------------
 
-URxvt.font: xft:Iosevka Term:style=medium:size=11
-URxvt.boldFont: xft:Iosevka Term:style=bold:size=11
-URxvt.italicFont: xft:Iosevka Term:style=italic:size=11
-URxvt.boldItalicFont: xft:Iosevka Term:style=medium:size=11
+URxvt.internalBorder:    10
+URxvt.externalBorder:    10
+!URxvt.lineSpace:        0
+!urxvt*shading:          30
+URxvt.depth:             32
+URxvt.saveLines:         10000
+URxvt*geometry:          96x30
+!URxvt*terminalName:      rxvt-unicode-256color
+URxvt*visualBell:        false
 
-URxvt*termName:                 rxvt-256color
-URxvt.depth:                    32
-URxvt*lineSpace:                1
-URxvt.iso14755:                 false
-URxvt.iso14755_52:              false
-URxvt*geometry:                 65x17
-URxvt.letterSpace:              -1
-URxvt.scrollBar:                false
-URxvt*loginShell:               true
-URxvt.internalBorder:           25
-URxvt.perl-ext:     default,matcher
-URxvt.url-launcher:             firefox
-URxvt.matcher.button: 1
-
-URxvt.scrollBar: false
-URxvt.scrollBar_right: false
+! Scrollbar
+URxvt.scrollBar:          false
+URxvt.scrollBar_right:    false
 URxvt.scrollBar_floating: false
-URxvt.scrollstyle: rxvt
+URxvt.scrollstyle:        rxvt
+URxvt*scrollTtyOutput:    false
+URxvt*scrollWithBuffer:   true
+URxvt*scrollTtyKeypress:  true
 
-! Colors
-URxvt*background: #000000
-URxvt*foreground: #B2B2B2
+! Fonts
+#define fonts xft:iosevka:size=10
+URxvt.font: xft:iosevka
+URxvt.letterSpace:       true
+
+!Home and End keys to jump to the beginning and end of lines
+URxvt*keysym.Home:       \033[1~
+URxvt*keysym.End:        \033[4~
+
+! Tabs
+URxvt.tabbed.tabbar-bg:  -1
+URxvt.tabbed.tabbar-fg:  -2
+URxvt.tabbed.tab-bg:     -2
+URxvt.tabbed.tab-fg:     -1
+URxvt.tabbed.title-bg:   -1
+URxvt.tabbed.title-fg:   -2
+URxvt.tabbed.autohide:   true
+URxvt.tabbed.new-button: false
+URxvt.tabbed.title:      true
+
+! Copy/Paste and URl handling
+! url-select (part of urxvt-perls package)
+URxvt.underlineURLs:           True
+URxvt.url-select.autocopy:     true
+URxvt.url-select.underline:    true
+URxvt.url-launcher:            /usr/bin/firefox
+URxvt.matcher.button:          1
+
+! Disable the stupid ctrl+shift 'feature'
+URxvt.iso14755:    false
+URxvt.iso14755_52: false
+
+! special
+*.foreground:   #9d9191
+*.background:   #1f1c1e
+*.cursorColor:  #9d9191
+
 ! black
-URxvt*color0:  #000000
-URxvt*color8:  #686868
+*.color0:       #85983e
+*.color8:       #36353a
+
 ! red
-URxvt*color1:  #B21818
-URxvt*color9:  #FF5454
+*.color1:       #b3655b
+*.color9:       #fb8e91
+
 ! green
-URxvt*color2:  #18B218
-URxvt*color10: #54FF54
+*.color2:       #eed7a1
+*.color10:      #9aaa5f
+
 ! yellow
-URxvt*color3:  #B26818
-URxvt*color11: #FFFF54
+*.color3:       #e1977e
+*.color11:      #c3aa81
+
 ! blue
-URxvt*color4:  #1818B2
-URxvt*color12: #5454FF
-! purple
-URxvt*color5:  #B218B2
-URxvt*color13: #FF54FF
+*.color4:       #627d92
+*.color12:      #525173
+
+! magenta
+*.color5:       #503d50
+*.color13:      #483440
+
 ! cyan
-URxvt*color6:  #18B2B2
-URxvt*color14: #54FFFF
+*.color6:       #77899f
+*.color14:      #425d72
+
 ! white
-URxvt*color7:  #B2B2B2
-URxvt*color15: #FFFFFF
+*.color7:       #707880
+*.color15: #c5c8c6
