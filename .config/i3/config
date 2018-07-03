@@ -14,12 +14,12 @@ font xft:Overpass 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
 
 # change focus
@@ -165,9 +165,13 @@ bar {
 for_window [class="^.*"] border pixel 1
 gaps outer 0
 gaps inner 15
-smart_gaps on
+# smart_gaps on
 
 # Colors
+# class                 border  backgr. text    indicator child_border
+client.focused_inactive #3c4c55 #212121 #d9d9d9 #0d1010 #899ba6
+client.unfocused        #3c4c55 #212121 #d9d9d9 #424242 #899ba6
+client.focused          #899BA6 #cecece #000000 #d9d9d9 #3c4c55
 
 # lock
 bindsym $mod+shift+x exec i3lock

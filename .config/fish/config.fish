@@ -23,6 +23,7 @@ alias gl "git log --graph --abbrev-commit --decorate --format=format:'%C(bold bl
 alias gap "git add . -p"
 alias gcp "git checkout . -p"
 alias gcb "git checkout -b"
+alias gp "git push origin HEAD"
 
 ############
 ## Docker ##
@@ -40,11 +41,15 @@ alias ctg "ctags -R -f ./.tags ."
 ############
 ### Wing ###
 ############
-alias wdb "psql -h 51.38.44.82 -d postgres_sb -p 5432 --username=dms"
-alias wdbl "psql -h 127.0.0.1 -p 5432 --username=dms"
+alias wdbl "psql -h 127.0.0.1 -p 5432 -d postgres_sb -U postgres"
 
 #############
 ### Shell ###
 #############
 
 alias l "ls -l"
+
+###############
+### Convert ###
+###############
+alias tocsv "libreoffice --headless --convert-to csv"
