@@ -17,7 +17,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'trevordmiller/nova-vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -40,7 +40,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Style
 syntax on
 set t_Co=256
-colorscheme nova
+colorscheme nord
+let g:nord_italic_comments = 1
+let g:nord_italic = 1
 
 " ------------------------------------------------------------
 "  Buffers

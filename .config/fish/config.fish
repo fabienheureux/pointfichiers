@@ -53,3 +53,10 @@ alias l "ls -l"
 ### Convert ###
 ###############
 alias tocsv "libreoffice --headless --convert-to csv"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish

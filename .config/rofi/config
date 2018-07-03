@@ -1,4 +1,4 @@
-rofi.font:          overpass 14
+rofi.font:          sans-serif 14
 rofi.lines:                 7
 rofi.line-padding:          10
 rofi.matching:              fuzzy
@@ -7,4 +7,4 @@ rofi.padding:               0
 rofi.separator-style:       none
 rofi.hide-scrollbar:        true
 rofi.line-margin:           0
-rofi.theme: ~/.config/rofi/themes/nova.rasi
+rofi.theme: ~/.config/rofi/themes/nord.rasi
