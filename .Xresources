@@ -1,102 +1,10 @@
 !-----------------------------------------------------------------------
 !                         Xft settings
 !-----------------------------------------------------------------------
-Xft.dpi:                96
+Xft.dpi:                125
 Xft.autohint:           false
 Xft.antialias:          true
 Xft.rgba:               rgb
 Xft.hinting:            true
 Xft:hintstyle:          hintslight
 Xft.lcdfilter: 					lcddefault
-
-!-----------------------------------------------------------------------
-!                        URxvt settings
-!-----------------------------------------------------------------------
-
-URxvt.internalBorder:    10
-URxvt.externalBorder:    10
-!URxvt.lineSpace:        0
-!urxvt*shading:          30
-URxvt.depth:             32
-URxvt.saveLines:         10000
-URxvt*geometry:          96x30
-!URxvt*terminalName:      rxvt-unicode-256color
-URxvt*visualBell:        false
-
-! Scrollbar
-URxvt.scrollBar:          false
-URxvt.scrollBar_right:    false
-URxvt.scrollBar_floating: false
-URxvt.scrollstyle:        rxvt
-URxvt*scrollTtyOutput:    false
-URxvt*scrollWithBuffer:   true
-URxvt*scrollTtyKeypress:  true
-
-! Fonts
-#define fonts xft:iosevka:size=10
-URxvt.font: xft:iosevka
-URxvt.letterSpace:       true
-
-!Home and End keys to jump to the beginning and end of lines
-URxvt*keysym.Home:       \033[1~
-URxvt*keysym.End:        \033[4~
-
-! Tabs
-URxvt.tabbed.tabbar-bg:  -1
-URxvt.tabbed.tabbar-fg:  -2
-URxvt.tabbed.tab-bg:     -2
-URxvt.tabbed.tab-fg:     -1
-URxvt.tabbed.title-bg:   -1
-URxvt.tabbed.title-fg:   -2
-URxvt.tabbed.autohide:   true
-URxvt.tabbed.new-button: false
-URxvt.tabbed.title:      true
-
-! Copy/Paste and URl handling
-! url-select (part of urxvt-perls package)
-URxvt.underlineURLs:           True
-URxvt.url-select.autocopy:     true
-URxvt.url-select.underline:    true
-URxvt.url-launcher:            /usr/bin/firefox
-URxvt.matcher.button:          1
-
-! Disable the stupid ctrl+shift 'feature'
-URxvt.iso14755:    false
-URxvt.iso14755_52: false
-
-! special
-*.foreground:   #9d9191
-*.background:   #1f1c1e
-*.cursorColor:  #9d9191
-
-! black
-*.color0:       #85983e
-*.color8:       #36353a
-
-! red
-*.color1:       #b3655b
-*.color9:       #fb8e91
-
-! green
-*.color2:       #eed7a1
-*.color10:      #9aaa5f
-
-! yellow
-*.color3:       #e1977e
-*.color11:      #c3aa81
-
-! blue
-*.color4:       #627d92
-*.color12:      #525173
-
-! magenta
-*.color5:       #503d50
-*.color13:      #483440
-
-! cyan
-*.color6:       #77899f
-*.color14:      #425d72
-
-! white
-*.color7:       #707880
-*.color15: #c5c8c6

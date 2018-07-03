@@ -1,2 +1,10 @@
 rofi.font:          overpass 14
-rofi.theme: /usr/share/rofi/themes/solarized_alternate.rasi
+rofi.lines:                 7
+rofi.line-padding:          10
+rofi.matching:              fuzzy
+rofi.bw:                    0
+rofi.padding:               0
+rofi.separator-style:       none
+rofi.hide-scrollbar:        true
+rofi.line-margin:           0
+rofi.theme: ~/.config/rofi/themes/nova.rasi

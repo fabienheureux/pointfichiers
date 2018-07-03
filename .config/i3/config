@@ -1,6 +1,7 @@
 ###################### i3
 
-set $mod Mod4
+set $mod Mod1
+set $sup Mod4
 
 ## Start programs at i3 launch
 exec --no-startup-id dropbox start
@@ -28,10 +29,10 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $sup+Left focus left
+bindsym $sup+Down focus down
+bindsym $sup+Up focus up
+bindsym $sup+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -151,7 +152,7 @@ exec --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 bar {
   status_command i3status --config ~/.config/i3status/i3status.conf
   position top
-  font xft:Overpass 12
+  font xft:Overpass 10
   strip_workspace_numbers yes
   separator_symbol "  "
   height 34
@@ -173,14 +174,14 @@ bindsym $mod+shift+x exec i3lock
 
 ### Screeeennnshooootttsss ###
 # Print screen focused window
-bindsym Print exec scrot -u 'Screenshot_%Y-%m-%d_%H.%M.%S.png' -e 'mv $f ~/Dropbox/Screenshots/'
+bindsym Print exec scrot -u 'Screenshot_%Y-%m-%d_%H.%M.%S.png' -e 'xclip -selection clipboard -t "image/png" < $f && mv $f ~/Dropbox/Screenshots/'
 
 # Print screen entire view
 bindsym $mod+Print exec scrot 'Screenshot_%Y-%m-%d_%H.%M.%S.png' -e 'mv $f ~/Dropbox/Screenshots/'
 
 ### Backlight ###
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # Increase Brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # Decrease Brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # Increase Brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # Decrease Brightness
 
 ### Media Player ###
 bindsym XF86AudioPlay exec playerctl play-pause
