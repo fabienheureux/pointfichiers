@@ -9,6 +9,7 @@ alias tml "tmux ls"
 ## Dotfiles ##
 ##############
 alias config "/usr/bin/git --git-dir=$HOME/.pointfichiers/ --work-tree=$HOME"
+alias cap "config add . -p"
 
 #########
 ## VIM ##
@@ -54,9 +55,18 @@ alias l "ls -l"
 ###############
 alias tocsv "libreoffice --headless --convert-to csv"
 
-# tabtab source for serverless package
+##################
+### Serverless ###
+##################
+
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [ -f /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /home/fabienheureux/.npm/_npx/8523/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish
+
+################
+### Postgres ###
+################
+alias pgstart "sudo runuser -l postgres -c 'pg_ctl -D /var/lib/postgres/data -l logfile start'"
+alias pgstop "sudo runuser -l postgres -c 'pg_ctl -D /var/lib/postgres/data -l logfile stop'"

@@ -80,7 +80,7 @@ label-mode-padding = 2
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #8fbcbb
+label-focused-background = #88c0d0
 label-focused-underline = ${colors.foreground}
 label-focused-foreground = ${colors.background}
 label-focused-padding = ${module/bspwm.label-focused-padding}
@@ -125,10 +125,10 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %m-%d"
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 ;have to manually insert module margins here
 format-prefix = "   "
 
