@@ -185,5 +185,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle
 exec --no-startup-id feh --bg-scale ~/Pictures/bg.jpg
 
 ## Start programs at i3 launch
+exec --no-startup-id compton -b -c -i -e
+exec --no-startup-id dropbox start
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id dropbox start

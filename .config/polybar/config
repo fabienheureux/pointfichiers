@@ -43,8 +43,7 @@ font-2 = sans-serif:size=13;1
 font-3 = siji:pixelsize=12;1
 
 modules-left = i3
-modules-center = github
-modules-right = volume battery memory cpu wlan backlight date
+modules-right = github volume battery memory cpu wlan backlight date
 
 tray-position = center
 tray-padding = 2
