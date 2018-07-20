@@ -17,6 +17,7 @@ secondary = #e5e9f0
 alert = #bf616a
 
 [bar/nord]
+monitor = eDP1
 width = 100%
 height = 32
 radius = 0

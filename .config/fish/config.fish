@@ -45,6 +45,7 @@ alias ctg "ctags -R -f ./.tags ."
 ### Wing ###
 ############
 alias wdbl "psql -h 127.0.0.1 -p 5432 -d postgres_sb -U postgres"
+alias wdbp "psql -h destocking.cjik0xh2cbiu.eu-west-3.rds.amazonaws.com -p 5432 -d destocking -U wing"
 
 #############
 ### Shell ###

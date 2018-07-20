@@ -10,11 +10,9 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim'
-Plug 'flowtype/vim-flow'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'arcticicestudio/nord-vim'
@@ -23,9 +21,11 @@ call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 
+let g:flow#flowpath = '~/.config/fnm/bin/flow'
+
 " Code
 let g:jsx_ext_required = 0
-let g:ale_fixers = { 'javascript': ['eslint', 'prettier'], 'typescript': ['tslint'], 'rust': ['rls', 'rustc', 'cargo'], 'css': ['stylelint'] }
+let g:ale_fixers = { 'javascript': ['eslint', 'flow', 'prettier'], 'typescript': ['tslint'], 'rust': ['rls', 'rustc', 'cargo'], 'css': ['stylelint'] }
 
 " Limit linters used for JavaScript.
 let g:ale_linters = { 'javascript': ['eslint', 'flow'] }
@@ -112,6 +112,8 @@ autocmd FileType python set sts=4
 "-----------------------------------------------------------
 " Nerdtree-like
 map <C-n> :Lexplore<CR>
+" Enforce all netrw buffer to close, fucking annoying issue
+autocmd FileType netrw setl bufhidden=delete
 
 "------------------------------------------------------------
 " Netrw
