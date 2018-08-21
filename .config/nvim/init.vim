@@ -11,11 +11,13 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim'
 
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim'
+" Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -33,6 +35,7 @@ let g:ale_sign_warning = '⚠'
 let g:ale_sign_error = '✕'
 let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter% says %s'
+let g:javascript_plugin_flow = 1
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -40,9 +43,9 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Style
 syntax on
 set t_Co=256
-colorscheme nord
-let g:nord_italic_comments = 1
-let g:nord_italic = 1
+set termguicolors     " enable true colors support
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
 
 " ------------------------------------------------------------
 "  Buffers
