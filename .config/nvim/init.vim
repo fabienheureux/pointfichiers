@@ -9,22 +9,6 @@ Plug 'tpope/vim-commentary'
 "
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim'
-
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'ayu-theme/ayu-vim'
-" Plug 'arcticicestudio/nord-vim'
-
-call plug#end()
-
-let g:deoplete#enable_at_startup = 1
-
-let g:flow#flowpath = '~/.config/fnm/bin/flow'
-
 " Code
 let g:jsx_ext_required = 0
 let g:ale_fixers = { 'javascript': ['eslint', 'flow', 'prettier'], 'typescript': ['tslint'], 'rust': ['rls', 'rustc', 'cargo'], 'css': ['stylelint'] }
@@ -36,16 +20,33 @@ let g:ale_sign_error = '✕'
 let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:javascript_plugin_flow = 1
+let g:flow#flowpath = '~/.config/fnm/bin/flow'
+
+Plug 'Shougo/deoplete.nvim'
+let g:deoplete#enable_at_startup = 1
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'chriskempson/base16-vim'
+
+call plug#end()
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Style
-syntax on
-set t_Co=256
-set termguicolors     " enable true colors support
-let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+" " " If you have vim >=8.0 or Neovim >= 0.1.5
+" if (has("termguicolors"))
+"  set termguicolors
+" endif
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+" set t_Co=256 " 256 color mode
+" set background=dark
+
+syntax enable
+colorscheme base16-eighties
 
 " ------------------------------------------------------------
 "  Buffers
@@ -128,11 +129,18 @@ let g:netrw_winsize = 15
 "------------------------------------------------------------
 " fzf
 " fzf location
-let $FZF_DEFAULT_COMMAND= 'fd --type f --color=always'
+let $FZF_DEFAULT_COMMAND="fd --type file --color=always"
 let $FZF_DEFAULT_OPTS="--ansi"
-set rtp+=/usr/local/opt/fzf
+let $FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 map <C-f> :Files<CR>
 map <C-t> :Tags<CR>
+
+" automatically refresh on change
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread
+
+" autoreload vimrc
+autocmd! BufWritePost init.vim,.vimrc source %
 
 "-----------------------------------------------------------
 " fuck it options......................
