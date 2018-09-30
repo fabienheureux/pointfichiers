@@ -1,5 +1,5 @@
 [core]
-	editor = /bin/nvim
+	editor = /usr/bin/nvim
 	excludeFiles = ~/.config/git/.gitignore
 [user]
 	name = Fabien Le Frapper
