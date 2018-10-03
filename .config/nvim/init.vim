@@ -1,50 +1,87 @@
 "------------------------------------------------------------
 " Plugins
-
 filetype off
 call plug#begin('~/.vim/plugged')
 
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'ludovicchabant/vim-gutentags'
-" Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
+Plug 'OmniSharp/omnisharp-vim'
 Plug 'Shougo/deoplete.nvim'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 10
+let g:deoplete#auto_complete_start_length = 1
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'atelierbram/Base2Tone-vim'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
-" Code
+"------------------------------------------------------------
+" Code linting / fixing / language support
 let g:jsx_ext_required = 0
-
-" Limit linters used for JavaScript.
-"
-let g:ale_fixers = { 'javascript': ['eslint', 'flow', 'prettier'], 'typescript': ['tslint'], 'rust': ['rls', 'rustc', 'cargo'], 'css': ['stylelint'] }
-let g:ale_linters = { 'javascript': ['eslint', 'flow'] }
+let g:ale_fixers = {
+	\ 'javascript': ['eslint', 'flow', 'prettier'],
+	\ 'typescript': ['tslint'],
+	\ 'rust': ['rls', 'rustc', 'cargo'],
+	\ 'css': ['stylelint']
+\}
+let g:ale_linters = {
+	\ 'javascript': ['eslint', 'flow'],
+	\ 'cs': ['Omnisharp']
+\}
 let g:ale_completion_enable = 0
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_error = '✕'
 let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:javascript_plugin_flow = 1
+let g:OmniSharp_server_path = '/mnt/c/Users/fabie/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
+let g:OmniSharp_translate_cygwin_wsl = 1
+let g:OmniSharp_port = 2000
 
+"------------------------------------------------------------
+" Autocompletion
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"------------------------------------------------------------
+" Sexiness
 set termguicolors
  if has('nvim')
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+ 	 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 endif
 
 syntax enable
-set background=dark
-colorscheme Base2Tone_EveningDark
+colorscheme onedark
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
+let g:onedark_termcolors = 256
+let g:onedark_terminal_italics = 1
 
 " ------------------------------------------------------------
 "  Buffers
@@ -89,7 +126,7 @@ set smartcase
 
 "------------------------------------------------------------
 " Visual options {{{1
-set number
+set number relativenumber
 
 "------------------------------------------------------------
 " Swap files
@@ -113,17 +150,17 @@ autocmd FileType python set sts=4
 
 "-----------------------------------------------------------
 " Nerdtree-like
-" map <C-n> :Lexplore<CR>
+map <C-n> :Lexplore<CR>
 " Enforce all netrw buffer to close, fucking annoying issue
-" autocmd FileType netrw setl bufhidden=delete
-map <C-n> :NERDTreeToggle<CR>
+autocmd FileType netrw setl bufhidden=delete
+" map <C-n> :NERDTreeToggle<CR>
 
 "------------------------------------------------------------
 " Netrw
-" let g:netrw_liststyle=3
-" let g:netrw_banner = 0
-" let g:netrw_browse_split = 2
-" let g:netrw_winsize = 15
+let g:netrw_liststyle=3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 15
 
 "------------------------------------------------------------
 " fzf
