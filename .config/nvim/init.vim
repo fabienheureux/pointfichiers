@@ -3,14 +3,15 @@
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'sheerun/vim-polyglot'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'w0rp/ale'
-Plug 'OmniSharp/omnisharp-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+" Plug 'OmniSharp/omnisharp-vim'
 Plug 'Shougo/deoplete.nvim'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 10
@@ -21,8 +22,9 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -31,13 +33,15 @@ call plug#end()
 let g:jsx_ext_required = 0
 let g:ale_fixers = {
 	\ 'javascript': ['eslint', 'flow', 'prettier'],
-	\ 'typescript': ['tslint'],
+	\ 'typescript': ['tslint', 'tsserver'],
 	\ 'rust': ['rls', 'rustc', 'cargo'],
+	\ 'python': ['autopep8'],
 	\ 'css': ['stylelint']
 \}
 let g:ale_linters = {
 	\ 'javascript': ['eslint', 'flow'],
-	\ 'cs': ['Omnisharp']
+	\ 'cs': ['Omnisharp'],
+	\ 'python': ['autopep8']
 \}
 let g:ale_completion_enable = 0
 let g:ale_statusline_format = ['X %d', '? %d', '']
@@ -71,17 +75,18 @@ endif
 
 "------------------------------------------------------------
 " Sexiness
-set termguicolors
- if has('nvim')
- 	 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-endif
+" set termguicolors
+"  if has('nvim')
+"  	 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+" endif
 
 syntax enable
-colorscheme onedark
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE
-let g:onedark_termcolors = 256
-let g:onedark_terminal_italics = 1
+let base16colorspace=256  " Access colors present in 256 colorspace
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+colorscheme base16-default-dark
 
 " ------------------------------------------------------------
 "  Buffers

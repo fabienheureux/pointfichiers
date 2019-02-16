@@ -1,1 +1,1 @@
-/root/.zprezto/runcoms/zshrc
+/home/fabienheureux/.zprezto/runcoms/zshrc

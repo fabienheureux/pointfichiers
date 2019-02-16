@@ -34,10 +34,7 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
-  'git' \
-  'tmux' \
-  'docker' \
-  'ssh' \
+  'node' \
   'completion' \
   'prompt'
 
@@ -46,7 +43,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the query found color.
-zstyle ':prezto:module:autosuggestions:color' found ''
+# zstyle ':prezto:module:autosuggestions:color' found ''
 
 #
 # Completions
@@ -61,7 +58,7 @@ zstyle ':prezto:module:autosuggestions:color' found ''
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -74,7 +71,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -88,13 +85,13 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # macOS
@@ -117,7 +114,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -160,7 +157,7 @@ zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' # 'id_rsa2' 'id_github'
 
 #
 # Syntax Highlighting
@@ -175,16 +172,16 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'line' \
   'cursor' \
   'root'
-
+#
 # Set syntax highlighting styles.
-zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin' 'bg=blue' \
-  'command' 'bg=blue' \
-  'function' 'bg=blue'
-
+# zstyle ':prezto:module:syntax-highlighting' styles \
+#   'builtin' 'bg=blue' \
+#   'command' 'bg=blue' \
+#   'function' 'bg=blue'
+#
 # Set syntax pattern styles.
-zstyle ':prezto:module:syntax-highlighting' pattern \
-  'rm*-rf*' 'fg=white,bold,bg=red'
+# zstyle ':prezto:module:syntax-highlighting' pattern \
+#   'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
@@ -226,8 +223,3 @@ zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
-
-#
-# SSH
-#
-zstyle ':prezto:module:ssh:load' identities 'github_rsa' 'gitlab_rsa'

@@ -1,1 +1,1 @@
-/root/.zprezto/runcoms/zshenv
+/home/fabienheureux/.zprezto/runcoms/zshenv
