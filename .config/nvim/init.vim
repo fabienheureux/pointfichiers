@@ -43,13 +43,13 @@ let g:ale_linters = {
 	\ 'cs': ['Omnisharp'],
 	\ 'python': ['autopep8']
 \}
-let g:ale_completion_enable = 0
+let g:ale_completion_enable = 1
 let g:ale_statusline_format = ['X %d', '? %d', '']
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:javascript_plugin_flow = 1
-let g:OmniSharp_server_path = '/mnt/c/Users/fabie/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
-let g:OmniSharp_translate_cygwin_wsl = 1
-let g:OmniSharp_port = 2000
+" let g:OmniSharp_server_path = '/mnt/c/Users/fabie/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
+" let g:OmniSharp_translate_cygwin_wsl = 1
+" let g:OmniSharp_port = 2000
 
 "------------------------------------------------------------
 " Autocompletion
@@ -75,18 +75,19 @@ endif
 
 "------------------------------------------------------------
 " Sexiness
-" set termguicolors
-"  if has('nvim')
+set termguicolors
+" if has('nvim')
 "  	 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 " endif
 
 syntax enable
-let base16colorspace=256  " Access colors present in 256 colorspace
+let base16colorspace=256
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+
 
 " ------------------------------------------------------------
 "  Buffers

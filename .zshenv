@@ -1,1 +1,0 @@
-/home/fabienheureux/.zprezto/runcoms/zshenv
