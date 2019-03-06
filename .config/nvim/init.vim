@@ -36,7 +36,8 @@ let g:ale_fixers = {
 	\ 'typescript': ['tslint', 'tsserver'],
 	\ 'rust': ['rls', 'rustc', 'cargo'],
 	\ 'python': ['autopep8'],
-	\ 'css': ['stylelint']
+	\ 'css': ['stylelint'],
+  \ 'scss': ['stylelint']
 \}
 let g:ale_linters = {
 	\ 'javascript': ['eslint', 'flow'],
@@ -75,18 +76,19 @@ endif
 
 "------------------------------------------------------------
 " Sexiness
-set termguicolors
 " if has('nvim')
 "  	 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 " endif
 
-syntax enable
-let base16colorspace=256
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
-" colorscheme base16-default-dark
+syntax enable
+set termguicolors
+let base16colorspace=256
+set t_Co=256
+hi Normal guibg=NONE ctermbg=NONE
 
 
 " ------------------------------------------------------------
@@ -132,7 +134,7 @@ set smartcase
 
 "------------------------------------------------------------
 " Visual options {{{1
-set number relativenumber
+set number nonumber
 
 "------------------------------------------------------------
 " Swap files
