@@ -12,12 +12,26 @@ packages:
 
 python:
 	brew install python
-
+	brew install pipenv
 
 node:
 	curl -sL https://deb.nodesource.com/setup_11.x | sudo bash -
-	sudo apt update
 	sudo apt install nodejs
+	mkdir ~/.npm-global
+
+postgres:
+	sudo touch /etc/apt/sources.list.d/pgdg.list
+	sudo echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
+	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+	sudo apt update
+	yes Y | sudo aptinstall postgresql-client-10
+
+rust:
+	curl https://sh.rustup.rs -sSf | sh
+
+docker:
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
 
 apps:
 	flatpak install flathub com.slack.slack
