@@ -1,5 +1,8 @@
+read -p "Do we remove existing keys ?"
 rm -rf ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-ssh-keygen -t rsa -b 4095 -C "contact@fabienlefrapper.me"
+read -p "Enter email: " email
+echo "Using email $email"
+ssh-keygen -t rsa -b 4095 -C $email
 ssh-add ~/.ssh/id_rsa
 pub=`cat ~/.ssh/id_rsa.pub`
 read -p "Enter github username: " githubuser

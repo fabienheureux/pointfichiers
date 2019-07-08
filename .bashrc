@@ -119,9 +119,6 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
-export DOCKER_HOST=tcp://localhost:2375
-export COMPOSE_CONVERT_WINDOWS_PATHS=2
-
 # Prompt format
 PS1='\e[37;1m\u@\e[35m\W\e[0m\$ '
 
