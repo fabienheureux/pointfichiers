@@ -1,6 +1,7 @@
 [core]
 	editor = /usr/bin/vim
 	excludeFiles = ~/.config/git/.gitignore
+	excludesfile = /home/fabienheureux/.gitignore_global
 [user]
 	name = Fabien Le Frapper
 	email = contact@fabienlefrapper.me

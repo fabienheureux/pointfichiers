@@ -4,56 +4,44 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
+" Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
+
+call plug#end()
+
+"--- LEGACY 
 " Plug 'editorconfig/editorconfig-vim'
 " Plug 'ludovicchabant/vim-gutentags'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'w0rp/ale'
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Plug 'OmniSharp/omnisharp-vim'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/deoplete.nvim'
 " let g:deoplete#enable_at_startup = 1
 " let g:deoplete#auto_complete_delay = 10
 " let g:deoplete#auto_complete_start_length = 1
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
-
-Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-
-call plug#end()
 
 "------------------------------------------------------------
 " Code linting / fixing / language support
 let g:jsx_ext_required = 0
 let g:ale_fixers = {
-	\ 'javascript': ['eslint', 'flow', 'prettier'],
-	\ 'typescript': ['tslint', 'tsserver'],
-	\ 'rust': ['rls', 'rustc', 'cargo'],
+	\ 'javascript': ['prettier'],
+	\ 'typescript': ['tsserver'],
+	\ 'rust': ['rls'],
 	\ 'python': ['autopep8'],
 	\ 'css': ['stylelint'],
   \ 'scss': ['stylelint']
 \}
-" let g:ale_linters = {
-" 	\ 'javascript': ['eslint', 'flow'],
-" 	\ 'cs': ['Omnisharp'],
-" 	\ 'python': ['autopep8']
-" \}
-" let g:ale_completion_enable = 1
-" let g:ale_statusline_format = ['X %d', '? %d', '']
-" let g:ale_echo_msg_format = '%linter% says %s'
-" let g:javascript_plugin_flow = 1
-" let g:OmniSharp_server_path = '/mnt/c/Users/fabie/.omnisharp/omnisharp-roslyn/OmniSharp.exe'
-" let g:OmniSharp_translate_cygwin_wsl = 1
-" let g:OmniSharp_port = 2000
-
 
 "------------------------------------------------------------
 " Gutentags
@@ -82,9 +70,6 @@ set number
 " ------------------------------------------------------------
 
 " Statusline
-
-
-
 " Function: display errors from Ale in statusline
 set laststatus=2
 set statusline=
@@ -97,14 +82,11 @@ set statusline+=\ %m
 set statusline+=\ %F
 set statusline+=%=
 set statusline+=\ ‹‹
+set statusline+=\ %{coc#status()}
 " set statusline+=\ %{strftime('%R', getftime(expand('%')))}
 set statusline+=\ ::
 set statusline+=\ %n
 set statusline+=\ ››\ %*
-
-
-
-
 
 " ------------------------------------------------------------
 "  Buffers
@@ -130,6 +112,26 @@ autocmd FileType python set ts=4
 autocmd FileType python set sts=4
 
 "------------------------------------------------------------
+" fzf
+map <C-f> :Files<CR>
+map <C-t> :Tags<CR>
+let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+"------------------------------------------------------------
 " Netrw
 let g:netrw_liststyle=3
 let g:netrw_banner = 0
@@ -145,4 +147,3 @@ autocmd! BufWritePost init.vim,.vimrc source %
 "-----------------------------------------------------------
 " fuck it options......................
 set backspace=indent,eol,start
-set encoding=UTF-8
