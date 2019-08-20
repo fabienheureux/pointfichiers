@@ -1,8 +1,8 @@
 # Base16 Shell
-set BASE16_SHELL "$HOME/.config/base16-shell/"
-[ -n "$PS1" ]; and \
-[ -s "$BASE16_SHELL/profile_helper.sh" ]; and \
-eval "("$BASE16_SHELL/profile_helper.sh")"
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
 
 # Aliases
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
