@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
 Plug 'danro/rename.vim'
+" Plug 'zxqfl/tabnine-vim'
 
 call plug#end()
 
@@ -33,6 +34,7 @@ call plug#end()
 " Plug 'airblade/vim-gitgutter'
 
 
+" set rtp+=~/tabnine-vim
 
 "" Basics
 " Disable strange Vi defaults.
@@ -163,6 +165,11 @@ set hidden
 set ignorecase
 set smartcase
 
+"" Copy
+vmap <C-Space> "ay
+nmap <C-Space> "aP
+imap <C-Space> <C-o>"ap
+nmap <C-c> "ayiw
 
 " Enable saving by `Ctrl-s`
 nnoremap <C-s> :w<CR>

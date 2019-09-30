@@ -12,8 +12,8 @@ eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # NPM 
 set PATH ~/.npm-global $PATH
-
 umask 002
 
 # Spacefish
 set SPACEFISH_PROMPT_ORDER time user dir host pyenv git line_sep char
+eval (starship init fish)
