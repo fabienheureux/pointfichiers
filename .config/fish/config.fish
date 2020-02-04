@@ -8,12 +8,13 @@ end
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Linuxbrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # NPM 
 set PATH ~/.npm-global $PATH
 umask 002
 
 # Spacefish
+set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 set SPACEFISH_PROMPT_ORDER time user dir host pyenv git line_sep char
-eval (starship init fish)
+starship init fish | source
