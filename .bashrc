@@ -120,7 +120,7 @@ fi
 
 
 # Prompt format
-PS1='\e[37;1m\u@\e[35m\W\e[0m\$ '
+# PS1='\e[37;1m\u@\e[35m\W\e[0m\$ '
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -144,3 +144,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /home/fabienheureux/.nvm/versions/node/v10.15.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/fabienheureux/.nvm/versions/node/v10.15.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
+
+eval "$(starship init bash)"
+

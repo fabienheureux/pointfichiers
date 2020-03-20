@@ -1,7 +1,12 @@
 # .bash_profile
 
 # Get the aliases and functions
-[ -f $HOME/.bashrc ] && . $HOME/.bashrc
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
 export PROMPT_COMMAND="pwd > /tmp/whereami"
 export GDK_SCALE=1.73
 export PATH="$HOME/.cargo/bin:$PATH"
