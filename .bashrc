@@ -92,6 +92,11 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+
+#Some django aliases...
+alias pmm="python manage.py makemigrations"
+alias pmi="python manage.py migrate"
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -146,4 +151,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 [ -f /home/fabienheureux/.nvm/versions/node/v10.15.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/fabienheureux/.nvm/versions/node/v10.15.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
 
 eval "$(starship init bash)"
+
 
