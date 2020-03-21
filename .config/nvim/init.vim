@@ -97,6 +97,7 @@ let g:ale_fixers = {
   \ 'scss': ['prettier']
 \}
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Format :call CocAction('format')
 
 let g:ale_set_balloons = 1
 let g:ale_completion_enabled = 1
