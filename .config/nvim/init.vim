@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
 Plug 'dense-analysis/ale'
-" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -15,27 +14,10 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
 Plug 'danro/rename.vim'
-" Plug 'zxqfl/tabnine-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
-"--- LEGACY 
-" Plug 'editorconfig/editorconfig-vim'
-" Plug 'ludovicchabant/vim-gutentags'
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-" Plug 'OmniSharp/omnisharp-vim'
-" Plug 'Shougo/deoplete.nvim'
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#auto_complete_delay = 10
-" let g:deoplete#auto_complete_start_length = 1
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'airblade/vim-gitgutter'
-
-
-" set rtp+=~/tabnine-vim
 
 "" Basics
 " Disable strange Vi defaults.
@@ -45,11 +27,6 @@ set nocompatible
 if has('autocmd')
   filetype plugin indent on
 endif
-
-" " Enable syntax highlighting.
-" if has('syntax')
-"   syntax enable
-" endif
 
 " Autoindent when starting new line, or using `o` or `O`.
 set autoindent
@@ -97,7 +74,6 @@ let g:ale_fixers = {
   \ 'scss': ['prettier']
 \}
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-command! -nargs=0 Format :call CocAction('format')
 
 let g:ale_set_balloons = 1
 let g:ale_completion_enabled = 1
@@ -216,8 +192,6 @@ set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
 "" COC
-" TextEdit might fail if hidden is not set.
-set hidden
 
 " Some servers have issues with backup files, see #649.
 set nobackup
