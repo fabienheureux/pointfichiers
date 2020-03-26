@@ -1,5 +1,5 @@
 {
-  "diagnostic.displayByAle": true,
+  //"diagnostic.displayByAle": true,
   "python.jediEnabled": false,
   "python.formatting.provider": "black"
 }

@@ -4,7 +4,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -13,7 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-Plug 'danro/rename.vim'
+" Plug 'danro/rename.vim'
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
@@ -65,18 +65,18 @@ set encoding=utf-8
 
 "" Code linting / fixing / language support
 let g:jsx_ext_required = 0
-let g:ale_fixers = {
-	\ 'javascript': ['prettier'],
-	\ 'typescript': ['tsserver'],
-	\ 'rust': ['rls'],
-	\ 'python': ['black'],
-	\ 'css': ['prettier'],
-  \ 'scss': ['prettier']
-\}
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" let g:ale_fixers = {
+" 	\ 'javascript': ['prettier'],
+" 	\ 'typescript': ['tsserver'],
+" 	\ 'rust': ['rls'],
+" 	\ 'python': ['black'],
+" 	\ 'css': ['prettier'],
+"   \ 'scss': ['prettier']
+" \}
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-let g:ale_set_balloons = 1
-let g:ale_completion_enabled = 1
+" let g:ale_set_balloons = 1
+" let g:ale_completion_enabled = 1
 
 "" Extras 
 " automatically refresh on change
@@ -301,6 +301,7 @@ xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Rename :call CocAction('rename')
 
 " Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
