@@ -36,6 +36,13 @@ docker:
 linux-headless:
 	make linux
 
+linux-headless-update:
+	brew update
+	brew upgrade
+	sudo aptitude update
+	sudo aptitude upgrade
+	sudo docker-compose pull
+
 linux-desktop:
 	make linux
 	# flatpak
