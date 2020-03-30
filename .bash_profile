@@ -7,6 +7,7 @@ if [ -n "$BASH_VERSION" ]; then
         . "$HOME/.bashrc"
     fi
 fi
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=~/.npm-global/bin:$PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"

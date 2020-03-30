@@ -1,0 +1,14 @@
+# [git_state]
+# disabled = true
+
+# [git_status]
+# disabled = true
+
+# [git_branch]
+# disabled = true
+
+# [rust]
+# disabled = true
+
+# [package]
+# disabled = true
