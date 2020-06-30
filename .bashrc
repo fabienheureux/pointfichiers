@@ -142,3 +142,5 @@ eval "$("$BASE16_SHELL/profile_helper.sh")"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 eval "$(starship init bash)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

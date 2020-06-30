@@ -36,12 +36,21 @@ docker:
 linux-headless:
 	make linux
 
-linux-headless-update:
+brew-update:
 	brew update
 	brew upgrade
+
+linux-update:
 	sudo aptitude update
 	sudo aptitude upgrade
+
+docker-update:
 	sudo docker-compose pull
+
+server-update:
+	make brew-update
+	make linux-update
+	make docker-update
 
 linux-desktop:
 	make linux

@@ -13,7 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-" Plug 'danro/rename.vim'
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
@@ -190,6 +190,9 @@ set termguicolors
 let base16colorspace=256
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
+
+"" Gogyo
+let g:goyo_linenr=1
 
 "" COC
 
