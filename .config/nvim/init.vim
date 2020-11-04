@@ -4,15 +4,14 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'chriskempson/base16-vim'
-" Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
+Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'editorconfig/editorconfig-vim'
 
@@ -157,23 +156,24 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
 "" fzf
-map <C-f> :Files<CR>
-map <C-t> :Tags<CR>
-let g:fzf_layout = { 'down': '~20%' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+map <C-f> :Clap files<CR>
+map <C-t> :Clap tags<CR>
+" let $FZF_DEFAULT_COMMAND='fd --type f'
+" let g:fzf_layout = { 'right': '~40%' }
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'Normal'],
+"   \ 'bg':      ['bg', 'Normal'],
+"   \ 'hl':      ['fg', 'Comment'],
+"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"   \ 'hl+':     ['fg', 'Statement'],
+"   \ 'info':    ['fg', 'PreProc'],
+"   \ 'border':  ['fg', 'Ignore'],
+"   \ 'prompt':  ['fg', 'Conditional'],
+"   \ 'pointer': ['fg', 'Exception'],
+"   \ 'marker':  ['fg', 'Keyword'],
+"   \ 'spinner': ['fg', 'Label'],
+"   \ 'header':  ['fg', 'Comment'] }
 
 "" Netrw
 let g:netrw_liststyle=3

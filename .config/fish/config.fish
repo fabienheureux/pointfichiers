@@ -6,6 +6,8 @@ end
 
 # Aliases
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias python python3
+alias pip pip3
 
 # Linuxbrew
 # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -18,3 +20,4 @@ umask 002
 set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 set SPACEFISH_PROMPT_ORDER time user dir host pyenv git line_sep char
 starship init fish | source
+cd
