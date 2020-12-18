@@ -156,22 +156,6 @@ inoremap <C-s> <ESC>:w<CR>
 "" fzf
 map <C-f> :Clap files<CR>
 map <C-t> :Clap tags<CR>
-" let $FZF_DEFAULT_COMMAND='fd --type f'
-" let g:fzf_layout = { 'right': '~40%' }
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'Normal'],
-"   \ 'bg':      ['bg', 'Normal'],
-"   \ 'hl':      ['fg', 'Comment'],
-"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"   \ 'hl+':     ['fg', 'Statement'],
-"   \ 'info':    ['fg', 'PreProc'],
-"   \ 'border':  ['fg', 'Ignore'],
-"   \ 'prompt':  ['fg', 'Conditional'],
-"   \ 'pointer': ['fg', 'Exception'],
-"   \ 'marker':  ['fg', 'Keyword'],
-"   \ 'spinner': ['fg', 'Label'],
-"   \ 'header':  ['fg', 'Comment'] }
 
 "" Netrw
 let g:netrw_liststyle=3
