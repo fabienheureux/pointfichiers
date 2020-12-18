@@ -11,8 +11,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()

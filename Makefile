@@ -1,18 +1,15 @@
 homebrew:
 	# Install homebrew
-	curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+	brew install gcc
 
 rust:
-	curl https://sh.rustup.rs -sSf | sh -s -- --help
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 python:
 	brew install python
-	brew install pipenv
-
-node:
-	curl -sL https://deb.nodesource.com/setup_11.x | sudo bash -
-	sudo apt install nodejs
-	mkdir ~/.npm-global
+	# python -m pip install virtualfish | bash
+	# vf install | bash
 
 postgres:
 	sudo touch /etc/apt/sources.list.d/pgdg.list
@@ -27,7 +24,7 @@ docker:
 	curl -fsSL https://get.docker.com -o get-docker.sh
 	sudo sh get-docker.sh
 	# install docker compose
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 	
 	# Use docker without sudo
@@ -63,7 +60,7 @@ vim:
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 dotfiles:
-	git clone --bare https://github.com/fabienheureux/factcheck.git $HOME/.cfg
+	git clone --bare https://github.com/fabienheureux/pointfichiers.git $HOME/.cfg
 	mkdir -p .config-backup
 	config checkout
 	if [ $? = 0 ]; then
@@ -89,8 +86,25 @@ gitlab:
 	# curl -X POST -d "{\"title\": \"`hostname`\", \"key\": \"$pub\", \"id\":\"$githubuser\"}" https://gitlab.com/api/v4/users/:id/keys	
 
 shell:
-	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-	curl -fsSL https://starship.rs/install.sh | bash
+	sudo chsh -s `which fish`
+	# Avoid failing if base16 already exist in target OS
+	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell || true
+	curl -fsSL https://starship.rs/install.sh
+	curl -fsSL https://git.io/fisher | bash
+	fisher install jorgebucaran/fisher
+	fisher jorgebucaran/nvm.fish
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+	
+
+shell-linux:
+	# Create a symbolic link to add kitty to PATH (assuming ~/.local/bin is in
+	# your PATH)
+	mkdir -p ~/.local/bin/
+	ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
+	# Place the kitty.desktop file somewhere it can be found by the OS
+	cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications || true
+	# Update the path to the kitty icon in the kitty.desktop file
+	sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
 
 macos:
 	make shell
@@ -174,14 +188,16 @@ macos:
 linux:
 	sudo apt-get update -y
 	sudo apt-get install -y aptitude 
-	sudo aptitude install -y neovim git curl flatpak build-essential openssl libssl-dev
-	make shell
+	sudo aptitude install -y neovim git curl flatpak build-essential openssl libssl-dev fish
 	make homebrew
+	make shell
 
 dev:
+	make vim
 	make rust
 	make python
-	make node
-	make postgres
-	make docker
-	make github
+	# make postgres
+	# make docker
+	# make github
+	brew install ripgrep
+	# set --universal nvm_default_version v14.0.0 | bash
