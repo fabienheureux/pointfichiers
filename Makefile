@@ -19,16 +19,6 @@ postgres:
 	yes Y | sudo aptinstall postgresql-client-10
 
 docker:
-	# install docker using convenience script
-	# https://docs.docker.com/install/linux/docker-ce/ubuntu/
-	curl -fsSL https://get.docker.com -o get-docker.sh
-	sudo sh get-docker.sh
-	# install docker compose
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
-	
-	# Use docker without sudo
-	sudo usermod -aG docker $(whoami)
 
 linux-headless:
 	make linux
@@ -84,16 +74,6 @@ github:
 gitlab:
 	# Setup gitlab ssh key
 	# curl -X POST -d "{\"title\": \"`hostname`\", \"key\": \"$pub\", \"id\":\"$githubuser\"}" https://gitlab.com/api/v4/users/:id/keys	
-
-shell:
-	sudo chsh -s `which fish`
-	# Avoid failing if base16 already exist in target OS
-	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell || true
-	curl -fsSL https://starship.rs/install.sh
-	curl -fsSL https://git.io/fisher | bash
-	fisher install jorgebucaran/fisher
-	fisher jorgebucaran/nvm.fish
-	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 	
 
 shell-linux:
@@ -193,11 +173,3 @@ linux:
 	make shell
 
 dev:
-	make vim
-	make rust
-	make python
-	# make postgres
-	# make docker
-	# make github
-	brew install ripgrep
-	# set --universal nvm_default_version v14.0.0 | bash
