@@ -166,7 +166,8 @@ linux:
 shell:
 	./.scripts/shell.sh
 
+node:
+	./.scripts/node.sh
+
 dev:
-	make vim
-	make rust
-	make python
+	./.scripts/dev.sh
