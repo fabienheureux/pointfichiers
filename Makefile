@@ -1,24 +1,17 @@
 homebrew:
-	# Install homebrew
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-	brew install gcc
+	./.scripts/homebrew.sh
 
 rust:
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	./.scripts/rust.sh
 
 python:
-	brew install python
-	# python -m pip install virtualfish | bash
-	# vf install | bash
+	./.scripts/python.sh
 
 postgres:
-	sudo touch /etc/apt/sources.list.d/pgdg.list
-	sudo echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
-	wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-	sudo apt update
-	yes Y | sudo aptinstall postgresql-client-10
+	./.scripts/postgres.sh
 
 docker:
+	./.scripts/docker.sh
 
 linux-headless:
 	make linux
@@ -47,7 +40,7 @@ linux-desktop:
 	flatpak install flathub org.blender.Blender
 
 vim:
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dir https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	./.scripts/vim.sh
 
 dotfiles:
 	git clone --bare https://github.com/fabienheureux/pointfichiers.git $HOME/.cfg
@@ -166,10 +159,14 @@ macos:
 	defaults write com.apple.dock wvous-bl-modifier -int 0V
 	
 linux:
-	sudo apt-get update -y
-	sudo apt-get install -y aptitude 
-	sudo aptitude install -y neovim git curl flatpak build-essential openssl libssl-dev fish
+	./.scripts/linux.sh
 	make homebrew
 	make shell
 
+shell:
+	./.scripts/shell.sh
+
 dev:
+	make vim
+	make rust
+	make python
