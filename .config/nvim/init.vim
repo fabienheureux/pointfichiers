@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ruanyl/vim-gh-line' 
 
 call plug#end()
 
