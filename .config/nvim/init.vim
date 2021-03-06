@@ -6,13 +6,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'junegunn/goyo.vim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ruanyl/vim-gh-line' 
+Plug 'brooth/far.vim'
 
 call plug#end()
 
@@ -155,8 +157,8 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
 "" fzf
-map <C-f> :Clap files<CR>
-map <C-t> :Clap tags<CR>
+map <C-f> :Rg<CR>
+map <C-t> :Tags<CR>
 
 "" Netrw
 let g:netrw_liststyle=3
@@ -196,6 +198,10 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+
+
+" Github / Gitlab
+let g:gh_gitlab_domain = "git.torchbox.com"
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
