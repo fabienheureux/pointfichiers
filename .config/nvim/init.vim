@@ -15,6 +15,7 @@ Plug 'mhinz/vim-startify'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ruanyl/vim-gh-line' 
 Plug 'brooth/far.vim'
+Plug 'airblade/vim-rooter'
 
 call plug#end()
 
@@ -65,18 +66,6 @@ set encoding=utf-8
 
 "" Code linting / fixing / language support
 let g:jsx_ext_required = 0
-" let g:ale_fixers = {
-" 	\ 'javascript': ['prettier'],
-" 	\ 'typescript': ['tsserver'],
-" 	\ 'rust': ['rls'],
-" 	\ 'python': ['black'],
-" 	\ 'css': ['prettier'],
-"   \ 'scss': ['prettier']
-" \}
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" let g:ale_set_balloons = 1
-" let g:ale_completion_enabled = 1
 
 "" Extras 
 " automatically refresh on change
@@ -157,7 +146,8 @@ nnoremap <C-s> :w<CR>
 inoremap <C-s> <ESC>:w<CR>
 
 "" fzf
-map <C-f> :Rg<CR>
+map <C-f> :Files<CR>
+" map <C-r> :Rg<CR>
 map <C-t> :Tags<CR>
 
 "" Netrw
