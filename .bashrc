@@ -147,3 +147,6 @@ eval "$(starship init bash)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
+
+complete -C /usr/bin/terraform terraform

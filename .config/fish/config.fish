@@ -16,3 +16,7 @@ alias pip pip3
 set -g fish_user_paths "/home/linuxbrew/.linuxbrew/bin" $fish_user_paths
 set SPACEFISH_PROMPT_ORDER time user dir host pyenv git line_sep char
 starship init fish | source
+alias config '/usr/bin/git --git-dir=/home/fabien/.pointfichiers/ --work-tree=/home/fabien'
+
+# Node
+fnm env | source

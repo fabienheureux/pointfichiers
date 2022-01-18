@@ -16,6 +16,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ruanyl/vim-gh-line' 
 Plug 'brooth/far.vim'
 Plug 'airblade/vim-rooter'
+Plug 'hashivim/vim-terraform'
+Plug 'github/copilot.vim'
 
 call plug#end()
 

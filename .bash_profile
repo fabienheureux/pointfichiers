@@ -15,4 +15,4 @@ umask 002
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export PATH="$HOME/.poetry/bin:$PATH"
-source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
