@@ -12,7 +12,6 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/opt/python/libexec/bin:$PATH"
 umask 002
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export PATH="$HOME/.poetry/bin:$PATH"
 . "$HOME/.cargo/env"
