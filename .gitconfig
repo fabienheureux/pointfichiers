@@ -1,7 +1,7 @@
 [core]
-	editor = /usr/bin/vim
+	editor = /opt/homebrew/bin/nvim
 	excludeFiles = ~/.config/git/.gitignore
-	excludesfile = /home/fabienheureux/.gitignore_global
+	excludesFile = ~/.gitignore_global
 [user]
 	name = Fabien Le Frapper
 	email = contact@fabienlefrapper.me
@@ -11,3 +11,10 @@
 	default = current
 [init]
 	defaultBranch = main
+[safe]
+	directory = /Users/fabienlefrapper/letabli/terredeliens
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

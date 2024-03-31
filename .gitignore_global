@@ -42,3 +42,6 @@ tags
 tags.lock
 tags.temp
 .vim
+.null-ls*
+
+.tool-versions

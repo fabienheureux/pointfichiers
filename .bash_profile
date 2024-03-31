@@ -15,3 +15,6 @@ umask 002
 
 export PATH="$HOME/.poetry/bin:$PATH"
 . "$HOME/.cargo/env"
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+source /Users/fabienlefrapper/.docker/init-bash.sh || true # Added by Docker Desktop

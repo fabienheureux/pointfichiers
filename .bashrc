@@ -79,3 +79,5 @@ source "$HOME/.cargo/env"
 . "$HOME/.cargo/env"
 
 complete -C /usr/bin/terraform terraform
+
+source /Users/fabienlefrapper/.docker/init-bash.sh || true # Added by Docker Desktop
